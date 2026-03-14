@@ -35,18 +35,18 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="py-20 md:py-32 bg-[#171819] border-t border-[#3c3e40]">
       <div className="container-md">
         <div className="text-center mb-16">
-          <h2 className="heading-2 mb-4">Lo que dicen nuestros clientes</h2>
-          <p className="text-xl text-gray-600">Más de 11 años transformando empresas digitalmente</p>
+          <h2 className="heading-2 mb-4 text-[#fcfcfc]">Lo que dicen nuestros clientes</h2>
+          <p className="text-xl text-[#8e8e8e]">Más de 11 años transformando empresas digitalmente</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.slice(0, 3).map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-gray-50 rounded-lg p-8 border border-gray-200 hover:shadow-lg transition-shadow"
+              className="bg-[#1b1c1d] p-8 border border-[#3c3e40] hover:border-[#00b9d5] transition-colors"
             >
               <div className="flex items-center gap-4 mb-6">
                 <img
@@ -55,15 +55,15 @@ export default function Testimonials() {
                   className="w-14 h-14 rounded-full object-cover"
                 />
                 <div>
-                  <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                  <p className="text-sm text-gray-600">{testimonial.position}</p>
-                  <p className="text-xs text-gray-500">{testimonial.company}</p>
+                  <h3 className="font-semibold text-[#fcfcfc]">{testimonial.name}</h3>
+                  <p className="text-sm text-[#8e8e8e]">{testimonial.position}</p>
+                  <p className="text-xs text-[#808080]">{testimonial.company}</p>
                 </div>
               </div>
-              <p className="text-gray-700 italic mb-6 line-clamp-4">{testimonial.text}</p>
+              <p className="text-[#8e8e8e] italic mb-6 line-clamp-4">{testimonial.text}</p>
               <div className="flex gap-1">
                 {[...Array(testimonial.rating || 5)].map((_, i) => (
-                  <span key={i} className="text-yellow-400">★</span>
+                  <span key={i} className="text-[#00b9d5]">★</span>
                 ))}
               </div>
             </div>

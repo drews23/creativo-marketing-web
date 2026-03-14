@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --theme-bg: #171819;
+  --theme-surface: #1b1c1d;
+  --theme-border: #3c3e40;
+  --theme-text: #8e8e8e;
+  --theme-text-light: #808080;
+  --theme-text-strong: #fcfcfc;
+  --theme-link: #00b9d5;
+  --theme-link-hover: #00f8f5;
+  --theme-link-2: #5271ff;
+  --theme-max-width: 1320px;
+  --theme-font-body: 'Optika', 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --theme-font-heading: 'Genniro', 'Montserrat', 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
 * {
   @apply m-0 p-0 box-border;
 }
@@ -11,8 +26,20 @@ html {
 }
 
 body {
-  @apply bg-white text-gray-900 font-sans;
+  background: var(--theme-bg);
+  color: var(--theme-text);
+  font-family: var(--theme-font-body);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-feature-settings: "rsc" 1;
+}
+
+a {
+  color: var(--theme-link);
+}
+
+a:hover {
+  color: var(--theme-link-hover);
 }
 
 ::-webkit-scrollbar {
@@ -33,39 +60,78 @@ body {
 
 @layer components {
   .container-md {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: var(--theme-max-width);
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+    background-color: var(--theme-link);
+    color: var(--theme-text-strong);
+    border: 1px solid var(--theme-link);
+    font-family: var(--theme-font-heading);
+    letter-spacing: 0.05em;
+    @apply px-6 py-3 rounded-none font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--theme-link-hover);
+    border-color: var(--theme-link-hover);
+    color: #0f1011;
   }
 
   .btn-secondary {
-    @apply bg-gray-200 hover:bg-gray-300 text-gray-900 px-6 py-3 rounded-lg font-semibold transition-colors;
+    background: transparent;
+    color: var(--theme-text-strong);
+    border: 1px solid var(--theme-border);
+    font-family: var(--theme-font-heading);
+    letter-spacing: 0.05em;
+    @apply px-6 py-3 rounded-none font-bold transition-colors;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--theme-link);
+    color: var(--theme-link);
   }
 
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors;
+    background: transparent;
+    color: var(--theme-text-strong);
+    border: 1px solid var(--theme-border);
+    @apply w-full px-4 py-3 rounded-none focus:outline-none transition-colors;
+  }
+
+  .input-field:focus {
+    border-color: var(--theme-link);
   }
 
   .heading-1 {
-    @apply text-4xl md:text-5xl font-bold tracking-tight;
+    font-family: var(--theme-font-heading);
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: 0.025em;
+    @apply font-semibold;
   }
 
   .heading-2 {
-    @apply text-3xl md:text-4xl font-bold;
+    font-family: var(--theme-font-heading);
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.025em;
+    @apply font-bold;
   }
 
   .heading-3 {
+    font-family: var(--theme-font-heading);
     @apply text-2xl md:text-3xl font-semibold;
   }
 
   .text-muted {
-    @apply text-gray-600;
+    color: var(--theme-text-light);
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+    background: linear-gradient(to right, var(--theme-link), var(--theme-link-hover));
+    @apply bg-clip-text text-transparent;
   }
 }
 
