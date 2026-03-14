@@ -261,7 +261,7 @@ export default function AdminTestimonials() {
                     ))}
                   </div>
                   <p className="text-gray-300 text-sm line-clamp-2 italic">
-                    "{testimonial.text}"
+                    &quot;{testimonial.text}&quot;
                   </p>
                 </div>
                 <div className="flex gap-2">
