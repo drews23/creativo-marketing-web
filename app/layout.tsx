@@ -3,6 +3,7 @@ import './globals.css'
 import { ClientToaster } from '@/components/ClientToaster'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://creativo-marketing-web.vercel.app'),
   title: 'Estudio Creativo de Marketing Digital',
   description: 'Diseño Web, Branding y Redes Sociales creados para atraer clientes, posicionarte mejor y aumentar tus ventas.',
   keywords: 'marketing digital, diseño web, branding, redes sociales, agencia de marketing',

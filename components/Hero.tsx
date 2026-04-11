@@ -22,7 +22,7 @@ export default function Hero() {
               <Link href="/contacto" className="btn-primary">
                 Trabajemos juntos
               </Link>
-              <Link href="/paquetes" className="btn-secondary">
+              <Link href="/paquetes-de-marketing-digital" className="btn-secondary">
                 Ver Servicios
               </Link>
             </div>
@@ -83,7 +83,7 @@ export default function Hero() {
           <p className="text-base md:text-lg text-[#8e8e8e] mb-8 leading-relaxed">
             Creamos marcas, webs y contenido que elevan tu presencia digital y generan confianza inmediata.
           </p>
-          <Link href="/paquetes" className="btn-primary">
+          <Link href="/paquetes-de-marketing-digital" className="btn-primary">
             Ver servicios
           </Link>
         </div>

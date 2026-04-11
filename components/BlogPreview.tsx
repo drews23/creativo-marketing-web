@@ -38,9 +38,12 @@ export default function BlogPreview() {
   useEffect(() => {
     const loadPosts = async () => {
       try {
-        const data = await getPosts(3, 1)
-        if (data && data.length > 0) {
-          setPosts(data.map((post: any) => ({
+        const data = await getPosts(12, 1)
+        const blogPosts = data
+          .filter((post: any) => post.category !== 'portfolio' && post.type !== 'portfolio')
+          .slice(0, 3)
+        if (blogPosts.length > 0) {
+          setPosts(blogPosts.map((post: any) => ({
             ...post,
             image: post.image || post.featured_image || defaultPosts[0].image,
             categories: post.categories || [post.category || 'Blog'],

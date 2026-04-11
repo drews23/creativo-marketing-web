@@ -46,8 +46,8 @@ export default function Footer() {
             <h4 className="text-[#fcfcfc] font-semibold mb-4 text-sm tracking-wider uppercase">Links</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/" className="hover:text-[#00b9d5] transition">Inicio</Link></li>
-              <li><Link href="/paquetes" className="hover:text-[#00b9d5] transition">Paquetes</Link></li>
-              <li><Link href="/acerca" className="hover:text-[#00b9d5] transition">Acerca de MD</Link></li>
+              <li><Link href="/paquetes-de-marketing-digital" className="hover:text-[#00b9d5] transition">Paquetes</Link></li>
+              <li><Link href="/estudio-creativo-marketing-digital" className="hover:text-[#00b9d5] transition">Acerca de MD</Link></li>
               <li><Link href="/blog" className="hover:text-[#00b9d5] transition">Blog</Link></li>
               <li><Link href="/contacto" className="hover:text-[#00b9d5] transition">Contáctanos</Link></li>
             </ul>

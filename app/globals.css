@@ -137,6 +137,46 @@ a:hover {
   .font-heading {
     font-family: var(--theme-font-heading);
   }
+
+  .content-prose {
+    color: var(--theme-text);
+  }
+
+  .content-prose h1,
+  .content-prose h2,
+  .content-prose h3,
+  .content-prose h4 {
+    color: var(--theme-text-strong);
+    font-family: var(--theme-font-heading);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+
+  .content-prose p,
+  .content-prose ul,
+  .content-prose ol,
+  .content-prose blockquote {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+
+  .content-prose ul,
+  .content-prose ol {
+    padding-left: 1.25rem;
+  }
+
+  .content-prose li {
+    margin-bottom: 0.5rem;
+  }
+
+  .content-prose a {
+    color: var(--theme-link);
+    text-decoration: underline;
+  }
+
+  .content-prose strong {
+    color: var(--theme-text-strong);
+  }
 }
 
 /* Animaciones */

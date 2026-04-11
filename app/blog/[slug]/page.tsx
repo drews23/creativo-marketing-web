@@ -2,9 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import CTA from '@/components/CTA';
 import { formatDate } from '@/lib/utils';
 import { getPostBySlug } from '@/lib/firestore-queries';
 import { HeroSkeleton } from '@/components/Skeletons';
+
+const fallbackImageBySlug: Record<string, string> = {
+  'estrategias-de-marketing-en-redes-sociales': 'https://creativomarketingdigital.com/wp-content/uploads/2023/11/estrategias-marketing-digital-fin-de-ano.webp',
+  'actualizar-wordpress': 'https://creativomarketingdigital.com/wp-content/uploads/2024/11/actualizar-wordpress-.webp',
+  'plantilla-gratis-after-effects-suscripcion-youtube': 'https://creativomarketingdigital.com/wp-content/uploads/2023/11/recordatorios-de-suscripcion-youtube.png.webp',
+};
 
 export default function PostPage({ params }: { params: { slug: string } }) {
   const [post, setPost] = useState<any>(null);
@@ -36,100 +46,110 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-white">
-        <div className="container-md py-16">
-          <HeroSkeleton />
-        </div>
-      </main>
+      <>
+        <Header />
+        <main className="min-h-screen bg-[#171819]">
+          <div className="container-md py-16">
+            <HeroSkeleton />
+          </div>
+        </main>
+        <Footer />
+      </>
     );
   }
 
-  if (error) {
+  if (error || !post) {
     return (
-      <main className="min-h-screen bg-gray-50">
-        <div className="container-md py-16">
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-red-700 mb-6">
-            {error}
+      <>
+        <Header />
+        <main className="min-h-screen bg-[#171819] text-[#8e8e8e]">
+          <div className="container-md py-16">
+            <div className="bg-[#1b1c1d] border border-red-500/40 p-6 text-red-300 mb-6">
+              {error || 'Artículo no encontrado'}
+            </div>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-[#00b9d5] hover:text-[#00f8f5] font-semibold uppercase tracking-[0.12em]"
+            >
+              <span aria-hidden="true">←</span>
+              Volver al blog
+            </Link>
           </div>
-          <Link
-            href="/blog"
-            className="inline-block text-blue-600 hover:text-blue-800 font-semibold"
-          >
-            ← Volver al blog
-          </Link>
-        </div>
-      </main>
+        </main>
+        <Footer />
+      </>
     );
   }
 
-  if (!post) {
-    return (
-      <main className="min-h-screen bg-gray-50">
-        <div className="container-md py-16">
-          <div className="text-gray-600 mb-6">
-            Artículo no encontrado
-          </div>
-          <Link
-            href="/blog"
-            className="inline-block text-blue-600 hover:text-blue-800 font-semibold"
-          >
-            ← Volver al blog
-          </Link>
-        </div>
-      </main>
-    );
-  }
+  const image = post.image || post.featured_image || fallbackImageBySlug[params.slug] || fallbackImageBySlug['estrategias-de-marketing-en-redes-sociales'];
 
   return (
-    <main className="min-h-screen bg-white">
-      <article className="container-md py-16">
-        <div className="mb-8">
-          <Link
-            href="/blog"
-            className="text-blue-600 hover:text-blue-800 font-semibold mb-6 inline-block"
-          >
-            ← Volver al blog
-          </Link>
-        </div>
+    <>
+      <Header />
+      <main className="min-h-screen bg-[#171819] text-[#8e8e8e]">
+        <article>
+          <header className="border-b border-[#3c3e40]">
+            <div className="container-md py-16 md:py-20">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 text-[#00b9d5] hover:text-[#00f8f5] text-sm font-semibold uppercase tracking-[0.12em] mb-8"
+              >
+                <span aria-hidden="true">←</span>
+                Volver al blog
+              </Link>
 
-        <header className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
-              {post.category || 'Blog'}
-            </span>
-            <time className="text-sm text-gray-500">
-              {formatDate(post.date || new Date().toISOString())}
-            </time>
-          </div>
-          <h1 className="heading-1 mb-4">{post.title}</h1>
-          <div className="text-gray-600 text-lg">
-            Por Estudio Creativo de Marketing Digital
-          </div>
-        </header>
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <span className="text-[10px] tracking-wider uppercase text-[#00b9d5] bg-[#2c2c2c] px-3 py-1 border border-[#3c3e40]">
+                  {post.category || 'Blog'}
+                </span>
+                <time className="text-xs text-[#808080]">
+                  {formatDate(post.date || new Date().toISOString())}
+                </time>
+              </div>
 
-        <div className="prose prose-lg max-w-none mb-12">
-          <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
-            {post.content ? (
-              <div
-                className="text-gray-800 leading-relaxed whitespace-pre-wrap"
-                dangerouslySetInnerHTML={{ __html: post.content }}
+              <h1 className="heading-1 text-[#fcfcfc] mb-4">{post.title}</h1>
+              <p className="text-lg max-w-3xl">
+                Por Estudio Creativo de Marketing Digital
+              </p>
+            </div>
+          </header>
+
+          <div className="container-md py-12 md:py-16">
+            <div className="relative h-[280px] md:h-[420px] overflow-hidden border border-[#3c3e40] bg-[#1b1c1d] mb-10">
+              <Image
+                src={image}
+                alt={post.title}
+                fill
+                className="object-cover opacity-85"
+                sizes="(max-width: 768px) 100vw, 1200px"
               />
-            ) : (
-              <p className="text-gray-600">{post.content_preview}</p>
-            )}
-          </div>
-        </div>
+            </div>
 
-        <footer className="border-t border-gray-200 pt-8 mt-12">
-          <div className="bg-blue-50 p-6 rounded-lg">
-            <h3 className="font-bold text-lg mb-2">Sobre Estudio Creativo</h3>
-            <p className="text-gray-700 text-sm">
-              Somos una agencia de marketing digital especializada en estrategias que transforman negocios.
-              Combinamos creatividad, tecnología y datos para resultados excepcionales.
-            </p>
+            <div className="bg-[#1b1c1d] border border-[#3c3e40] p-6 md:p-10">
+              {post.content ? (
+                <div
+                  className="content-prose whitespace-pre-wrap"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+              ) : (
+                <div className="content-prose">
+                  <p>{post.content_preview || 'Contenido no disponible.'}</p>
+                </div>
+              )}
+            </div>
+
+            <div className="mt-10 bg-[#1b1c1d] border border-[#3c3e40] p-6 md:p-8">
+              <h2 className="heading-3 text-[#fcfcfc] mb-3">Sobre Estudio Creativo MD</h2>
+              <p className="text-sm md:text-base leading-relaxed">
+                Somos un estudio creativo de marketing digital enfocado en construir marcas más sólidas, sitios web más claros y contenidos que generen confianza inmediata.
+              </p>
+            </div>
           </div>
-        </footer>
-      </article>
-    </main>
+        </article>
+
+        <CTA />
+      </main>
+      <Footer />
+    </>
   );
 }

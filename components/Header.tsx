@@ -6,8 +6,8 @@ import Image from 'next/image'
 
 const navLinks = [
   { href: '/', label: 'Inicio' },
-  { href: '/paquetes', label: 'Paquetes' },
-  { href: '/acerca', label: 'Acerca de MD' },
+  { href: '/paquetes-de-marketing-digital', label: 'Paquetes' },
+  { href: '/estudio-creativo-marketing-digital', label: 'Acerca de MD' },
   { href: '/blog', label: 'Blog' },
   { href: '/contacto', label: 'Contacto' },
 ]
