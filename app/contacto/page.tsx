@@ -38,11 +38,14 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-gray-50">
+      <main className="min-h-screen bg-[#171819]">
         <div className="container-md py-16">
-          <div className="max-w-2xl">
-            <h1 className="heading-1 mb-2">Contacto</h1>
-            <p className="text-xl text-gray-600 mb-12">
+          <div className="max-w-4xl">
+            <p className="text-xs tracking-[0.2em] uppercase text-[#00b9d5] mb-4 font-semibold">
+              Contáctanos
+            </p>
+            <h1 className="heading-1 mb-2 text-[#fcfcfc]">Contacto</h1>
+            <p className="text-lg text-[#8e8e8e] mb-12">
               Cuéntanos cómo podemos ayudarte a impulsar tu negocio digital
             </p>
 
@@ -101,28 +104,32 @@ export default function ContactPage() {
                 </button>
               </form>
 
-              <div className="bg-white p-8 rounded-lg shadow">
-                <h3 className="heading-3 mb-6">Información de Contacto</h3>
+              <div className="bg-[#1b1c1d] p-8 border border-[#3c3e40]">
+                <h3 className="heading-3 mb-6 text-[#fcfcfc]">Información de Contacto</h3>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-semibold mb-2">Teléfono</h4>
-                    <a href="tel:+573166918444" className="text-blue-600 hover:underline">
+                    <h4 className="font-semibold mb-2 text-[#fcfcfc] text-sm uppercase tracking-wider">Oficina</h4>
+                    <p className="text-sm text-[#8e8e8e]">Colombia — Cl 47 # 7-53, Marly, Bogotá, D.C.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 text-[#fcfcfc] text-sm uppercase tracking-wider">Teléfono</h4>
+                    <a href="tel:+573166918444" className="text-[#00b9d5] hover:text-[#00f8f5] transition">
                       +57 316 691 8444
                     </a>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Email</h4>
-                    <a href="mailto:estudio@creativomarketingdigital.com" className="text-blue-600 hover:underline">
+                    <h4 className="font-semibold mb-2 text-[#fcfcfc] text-sm uppercase tracking-wider">Email</h4>
+                    <a href="mailto:estudio@creativomarketingdigital.com" className="text-[#00b9d5] hover:text-[#00f8f5] transition">
                       estudio@creativomarketingdigital.com
                     </a>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Redes Sociales</h4>
+                    <h4 className="font-semibold mb-2 text-[#fcfcfc] text-sm uppercase tracking-wider">Redes Sociales</h4>
                     <div className="flex gap-4">
-                      <a href="https://facebook.com/studiocreativomd" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                      <a href="https://web.facebook.com/studiocreativomd" target="_blank" rel="noopener noreferrer" className="text-[#00b9d5] hover:text-[#00f8f5] transition">
                         Facebook
                       </a>
-                      <a href="https://instagram.com/studiocreativomd" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                      <a href="https://www.instagram.com/studiocreativomd" target="_blank" rel="noopener noreferrer" className="text-[#00b9d5] hover:text-[#00f8f5] transition">
                         Instagram
                       </a>
                     </div>
