@@ -120,13 +120,12 @@ export default function PackagesPage() {
                   </div>
 
                   <div className="bg-[#1b1c1d] border border-[#3c3e40] p-6">
-                    <h3 className="text-[#fcfcfc] font-heading text-lg mb-3">Links</h3>
+                    <h3 className="text-[#fcfcfc] font-heading text-lg mb-3">Menú</h3>
                     <ul className="space-y-2 text-sm">
                       <li><Link href="/" className="hover:text-[#00b9d5] transition">Inicio</Link></li>
                       <li><Link href="/estudio-creativo-marketing-digital" className="hover:text-[#00b9d5] transition">Acerca de MD</Link></li>
                       <li><Link href="/tienda" className="hover:text-[#00b9d5] transition">Tienda</Link></li>
-                      <li><Link href="/blog" className="hover:text-[#00b9d5] transition">Blog</Link></li>
-                      <li><Link href="/contacto" className="hover:text-[#00b9d5] transition">Contáctanos</Link></li>
+                      <li><Link href="/contacto" className="hover:text-[#00b9d5] transition">Contacto</Link></li>
                     </ul>
                   </div>
                 </div>
