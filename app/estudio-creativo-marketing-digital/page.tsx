@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BlogPreview from '@/components/BlogPreview'
-import CTA from '@/components/CTA'
 
 const focusAreas = [
   {
@@ -83,7 +82,6 @@ export default function AboutPage() {
         </section>
 
         <BlogPreview />
-        <CTA />
       </main>
       <Footer />
     </>

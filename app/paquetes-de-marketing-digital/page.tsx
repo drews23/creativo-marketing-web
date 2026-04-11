@@ -124,6 +124,7 @@ export default function PackagesPage() {
                     <ul className="space-y-2 text-sm">
                       <li><Link href="/" className="hover:text-[#00b9d5] transition">Inicio</Link></li>
                       <li><Link href="/estudio-creativo-marketing-digital" className="hover:text-[#00b9d5] transition">Acerca de MD</Link></li>
+                      <li><Link href="/tienda" className="hover:text-[#00b9d5] transition">Tienda</Link></li>
                       <li><Link href="/blog" className="hover:text-[#00b9d5] transition">Blog</Link></li>
                       <li><Link href="/contacto" className="hover:text-[#00b9d5] transition">Contáctanos</Link></li>
                     </ul>

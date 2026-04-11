@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CTA from '@/components/CTA';
 import { formatDate } from '@/lib/utils';
 import { getPostBySlug } from '@/lib/firestore-queries';
 import { HeroSkeleton } from '@/components/Skeletons';
@@ -146,8 +145,6 @@ export default function PostPage({ params }: { params: { slug: string } }) {
             </div>
           </div>
         </article>
-
-        <CTA />
       </main>
       <Footer />
     </>

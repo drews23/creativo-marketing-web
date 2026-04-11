@@ -17,6 +17,13 @@ const defaultTestimonials = [
   },
 ];
 
+const stats = [
+  { label: 'Clientes', value: '50+' },
+  { label: 'Proyectos', value: '200+' },
+  { label: 'Años experiencia', value: '11+' },
+  { label: 'Países', value: '5' },
+];
+
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState(defaultTestimonials);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -98,6 +105,19 @@ export default function Testimonials() {
                 ))}
               </div>
             )}
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-10 border-t border-[#3c3e40]">
+              {stats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold text-[#00b9d5] mb-2 font-heading">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-[#8e8e8e] uppercase tracking-wider">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

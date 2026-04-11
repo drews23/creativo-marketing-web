@@ -32,6 +32,18 @@ const defaultPosts = [
   },
 ]
 
+const blogCategories = [
+  'Blog',
+  'Diseño Gráfico',
+  'Estrategias de Marketing',
+  'Marketing',
+  'Marketing Digital',
+  'Plantillas After Effects',
+  'Publicidad Online',
+  'Recursos Visuales',
+  'Redes Sociales',
+]
+
 export default function BlogPreview() {
   const [posts, setPosts] = useState(defaultPosts)
 
@@ -66,6 +78,14 @@ export default function BlogPreview() {
           <h2 className="heading-2 text-3xl md:text-4xl text-[#fcfcfc] mb-4">
             Novedades y actualizaciones
           </h2>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-10 text-xs md:text-sm uppercase tracking-[0.12em] text-[#808080]">
+          {blogCategories.map((category) => (
+            <span key={category} className="hover:text-[#00b9d5] transition-colors cursor-default">
+              {category}
+            </span>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/', label: 'Inicio' },
   { href: '/paquetes-de-marketing-digital', label: 'Paquetes' },
   { href: '/estudio-creativo-marketing-digital', label: 'Acerca de MD' },
+  { href: '/tienda', label: 'Tienda' },
   { href: '/blog', label: 'Blog' },
   { href: '/contacto', label: 'Contacto' },
 ]
